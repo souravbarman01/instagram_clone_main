@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/util/dimensions.dart';
 import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../common/enums/auth_view_enum.dart';
 import '../../../common/widgets/bottom_signup_bar.dart';
+import '../../../helper/route_helper.dart';
 import '../controllers/instagram_auth_controller.dart';
 import '../widgets/account_view_widget.dart';
 import '../widgets/login_view_form.dart';
@@ -69,14 +71,14 @@ class _InstagramAuthorizationScreenState extends State<InstagramAuthorizationScr
                               ? AccountView(
                                   key: const ValueKey('account'),
                                   username: authController.usernameCtrl.text,
-                                  onLogin: () {},
+                                  onLogin: () => context.go(RouteHelper.home),
                                   onSwitchAccounts: authController.toForm,
                                 )
                               : LoginFormView(
                                   key: const ValueKey('form'),
                                   usernameCtrl: authController.usernameCtrl,
                                   passwordCtrl: authController.passwordCtrl,
-                                  onLogin: () {},
+                                  onLogin: () => context.go(RouteHelper.home),
                                   onForgotPassword: () {},
                                   onLoginWithFacebook: () {},
                                 ),
@@ -96,5 +98,4 @@ class _InstagramAuthorizationScreenState extends State<InstagramAuthorizationScr
     );
   }
 }
-
 

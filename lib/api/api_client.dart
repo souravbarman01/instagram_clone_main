@@ -1,7 +1,4 @@
-import 'dart:convert';
-import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
-import '../util/app_constants.dart';
 
 class ApiClient extends GetxService {
   final String appBaseUrl;
@@ -9,7 +6,6 @@ class ApiClient extends GetxService {
   final int timeoutInSeconds = 30;
 
   String? token;
-  late Map<String, String> _mainHeaders;
 
   ApiClient({required this.appBaseUrl}) {
    // updateHeader(null);
