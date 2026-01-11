@@ -1,5 +1,6 @@
 import 'package:instagram_clone/features/auth/controllers/instagram_auth_controller.dart';
 import 'package:instagram_clone/features/home/controllers/home_controller.dart';
+import 'package:instagram_clone/features/profile/controllers/profile_controller.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:get/get.dart';
 
@@ -14,10 +15,9 @@ Future<void> init() async {
   Get.lazyPut(() => ThemeController(sharedPreferences: Get.find()));
   Get.lazyPut(() => InstagramAuthController());
   Get.lazyPut(() => HomeController());
+  Get.lazyPut(() => ProfileController());
 
   Get.lazyPut(() => ApiClient(appBaseUrl: AppConstants.baseUrl));
-
-
 
 
 
