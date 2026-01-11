@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
-import '../domain/models/demo_avatars.dart';
+import '../domain/models/post_model.dart';
 
 class DummyPostSection extends StatelessWidget {
-  const DummyPostSection({super.key});
+  const DummyPostSection({super.key, required this.post});
+
+  final PostModel post;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +20,7 @@ class DummyPostSection extends StatelessWidget {
             children: [
               CircleAvatar(
                 radius: 16,
-                backgroundImage: NetworkImage(demoAvatar3),
+                backgroundImage: NetworkImage(post.userAvatarUrl),
                 onBackgroundImageError: (_, __) {},
               ),
               const SizedBox(width: 10),
@@ -26,16 +28,18 @@ class DummyPostSection extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Container(
-                      height: 12,
-                      width: 120,
-                      color: theme.dividerColor.withValues(alpha: 0.35),
+                    Text(
+                      post.userName,
+                      style: theme.textTheme.bodyMedium?.copyWith(
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
-                    const SizedBox(height: 6),
-                    Container(
-                      height: 10,
-                      width: 90,
-                      color: theme.dividerColor.withValues(alpha: 0.25),
+                    Text(
+                      post.location,
+                      style: theme.textTheme.bodySmall?.copyWith(
+                        color: theme.hintColor,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
                   ],
                 ),
@@ -44,17 +48,7 @@ class DummyPostSection extends StatelessWidget {
             ],
           ),
         ),
-        AspectRatio(
-          aspectRatio: 1,
-          child: Container(
-            color: theme.dividerColor.withValues(alpha: 0.25),
-            alignment: Alignment.center,
-            child: Text(
-              'Post media (next prompt)',
-              style: theme.textTheme.bodyMedium?.copyWith(color: theme.hintColor),
-            ),
-          ),
-        ),
+        _PostMediaCarousel(images: post.images),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
           child: Row(
@@ -74,16 +68,26 @@ class DummyPostSection extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                height: 12,
-                width: 220,
-                color: theme.dividerColor.withValues(alpha: 0.25),
+              Text(
+                'Liked by ${post.likedByUser} and ${post.likesCount} others',
+                style: theme.textTheme.bodyMedium?.copyWith(
+                  fontWeight: FontWeight.w600,
+                ),
               ),
               const SizedBox(height: 10),
-              Container(
-                height: 12,
-                width: 280,
-                color: theme.dividerColor.withValues(alpha: 0.20),
+              RichText(
+                text: TextSpan(
+                  style: theme.textTheme.bodyMedium,
+                  children: [
+                    TextSpan(
+                      text: '${post.userName} ',
+                      style: theme.textTheme.bodyMedium?.copyWith(
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    TextSpan(text: post.caption),
+                  ],
+                ),
               ),
             ],
           ),
@@ -94,3 +98,71 @@ class DummyPostSection extends StatelessWidget {
   }
 }
 
+class _PostMediaCarousel extends StatefulWidget {
+  const _PostMediaCarousel({required this.images});
+
+  final List<String> images;
+
+  @override
+  State<_PostMediaCarousel> createState() => _PostMediaCarouselState();
+}
+
+class _PostMediaCarouselState extends State<_PostMediaCarousel> {
+  int _page = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
+    return AspectRatio(
+      aspectRatio: 1,
+      child: Stack(
+        children: [
+          Positioned.fill(
+            child: PageView.builder(
+              itemCount: widget.images.length,
+              onPageChanged: (value) => setState(() => _page = value),
+              itemBuilder: (context, index) {
+                final url = widget.images[index];
+                return Image.network(
+                  url,
+                  fit: BoxFit.cover,
+                  errorBuilder: (_, __, ___) => Container(
+                    color: theme.dividerColor.withValues(alpha: 0.25),
+                    alignment: Alignment.center,
+                    child: Text(
+                      'Image unavailable',
+                      style: theme.textTheme.bodyMedium?.copyWith(color: theme.hintColor),
+                    ),
+                  ),
+                );
+              },
+            ),
+          ),
+          if (widget.images.length > 1)
+            Positioned(
+              bottom: 10,
+              left: 0,
+              right: 0,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: List.generate(widget.images.length, (index) {
+                  final isActive = index == _page;
+                  return AnimatedContainer(
+                    duration: const Duration(milliseconds: 150),
+                    margin: const EdgeInsets.symmetric(horizontal: 3),
+                    height: 6,
+                    width: isActive ? 10 : 6,
+                    decoration: BoxDecoration(
+                      color: isActive ? theme.primaryColor : theme.dividerColor,
+                      borderRadius: BorderRadius.circular(999),
+                    ),
+                  );
+                }),
+              ),
+            ),
+        ],
+      ),
+    );
+  }
+}
