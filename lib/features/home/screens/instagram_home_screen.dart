@@ -19,7 +19,9 @@ class _InstagramHomeScreenState extends State<InstagramHomeScreen> {
   @override
   void initState() {
     super.initState();
-    Get.find<HomeController>().loadPosts();
+    final controller = Get.find<HomeController>();
+    controller.loadPosts();
+    controller.loadStories();
   }
 
   @override

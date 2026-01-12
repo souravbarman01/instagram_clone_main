@@ -23,7 +23,7 @@ class ProfileGridTile extends StatelessWidget {
           child: Image.network(
             imageUrl,
             fit: BoxFit.cover,
-            errorBuilder: (_, __, ___) => Container(
+            errorBuilder: (_, _, _) => Container(
               color: theme.dividerColor.withValues(alpha: 0.25),
             ),
           ),

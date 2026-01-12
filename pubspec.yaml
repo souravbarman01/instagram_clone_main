@@ -68,6 +68,7 @@ flutter:
     - assets/font/
     - assets/images/
     - lib/features/home/domain/repositories/postData.json
+    - lib/features/home/domain/repositories/stories.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

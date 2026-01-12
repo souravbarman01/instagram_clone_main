@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 
 import '../domain/models/post_model.dart';
+import '../domain/models/story_model.dart';
 import '../domain/services/home_service_interface.dart';
 
 class HomeController extends GetxController implements GetxService {
@@ -15,11 +16,20 @@ class HomeController extends GetxController implements GetxService {
   List<PostModel> _posts = [];
   List<PostModel> get posts => _posts;
 
+  List<StoryModel> _stories = [];
+  List<StoryModel> get stories => _stories;
+
   bool _isLoading = false;
   bool get isLoading => _isLoading;
 
+  bool _isStoriesLoading = false;
+  bool get isStoriesLoading => _isStoriesLoading;
+
   String? _errorMessage;
   String? get errorMessage => _errorMessage;
+
+  String? _storiesErrorMessage;
+  String? get storiesErrorMessage => _storiesErrorMessage;
 
   Future<void> loadPosts() async {
     _isLoading = true;
@@ -32,6 +42,21 @@ class HomeController extends GetxController implements GetxService {
       _errorMessage = 'Failed to load posts';
     } finally {
       _isLoading = false;
+      update();
+    }
+  }
+
+  Future<void> loadStories() async {
+    _isStoriesLoading = true;
+    _storiesErrorMessage = null;
+    update();
+
+    try {
+      _stories = await _homeService.getStories();
+    } catch (error) {
+      _storiesErrorMessage = 'Failed to load stories';
+    } finally {
+      _isStoriesLoading = false;
       update();
     }
   }

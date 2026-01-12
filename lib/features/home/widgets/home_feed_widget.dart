@@ -29,7 +29,13 @@ class HomeFeedBody extends StatelessWidget {
           padding: EdgeInsets.zero,
           itemCount: posts.length + 2,
           itemBuilder: (context, index) {
-            if (index == 0) return const StoriesHeaderSection();
+            if (index == 0) {
+              return StoriesHeaderSection(
+                stories: homeController.stories,
+                isLoading: homeController.isStoriesLoading,
+                errorMessage: homeController.storiesErrorMessage,
+              );
+            }
             if (index == 1) {
               return const Divider(height: Dimensions.dividerHeight);
             }
