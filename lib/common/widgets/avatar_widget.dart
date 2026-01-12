@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../util/images.dart';
+
 
 class Avatar extends StatelessWidget {
   const Avatar({super.key,required this.size});
@@ -19,9 +21,9 @@ class Avatar extends StatelessWidget {
       ),
       child: ClipOval(
         child: Image.network(
-          'https://media.licdn.com/dms/image/v2/D5603AQHV8z7QYjKFxQ/profile-displayphoto-scale_200_200/B56Zjh5LGHHAAc-/0/1756136518978?e=2147483647&v=beta&t=6fDr4G8Ovijb69-LeW1l1E7tJ9d5rbz3Kwsiaw1JeZY',
+          Images.souravImg,
           fit: BoxFit.cover,
-          errorBuilder: (_, __, ___) => Container(
+          errorBuilder: (_, _, _) => Container(
             color: theme.cardColor,
             alignment: Alignment.center,
             child: Icon(Icons.person, size: size * 0.45, color: theme.hintColor),

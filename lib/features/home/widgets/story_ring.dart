@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_clone_main/util/color_resources.dart';
 import 'package:instagram_clone_main/util/dimensions.dart';
 
 class StoryRing extends StatelessWidget {
@@ -24,12 +25,7 @@ class StoryRing extends StatelessWidget {
           decoration: BoxDecoration(
             shape: BoxShape.circle,
             gradient: const LinearGradient(
-              colors: [
-                Color(0xFFF58529),
-                Color(0xFFDD2A7B),
-                Color(0xFF8134AF),
-                Color(0xFF515BD4),
-              ],
+              colors: ColorResources.storyRingGradient,
               begin: Alignment.topRight,
               end: Alignment.bottomLeft,
             ),

@@ -35,13 +35,13 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
       actions: [
         IconButton(
           onPressed: () {},
-          splashRadius: 22,
-          icon: FaIcon(FontAwesomeIcons.squarePlus, color: iconColor, size: 20),
+          splashRadius: Dimensions.radiusExtraLarge + 2,
+          icon: FaIcon(FontAwesomeIcons.squarePlus, color: iconColor, size: Dimensions.paddingSizeLarge),
         ),
         IconButton(
           onPressed: () {},
-          splashRadius: 22,
-          icon: FaIcon(FontAwesomeIcons.paperPlane, color: iconColor, size: 20),
+          splashRadius: Dimensions.radiusExtraLarge + 2,
+          icon: FaIcon(FontAwesomeIcons.paperPlane, color: iconColor, size: Dimensions.paddingSizeLarge),
         ),
         const SizedBox(width: Dimensions.space4),
       ],

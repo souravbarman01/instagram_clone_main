@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:instagram_clone_main/util/dimensions.dart';
-
-import '../domain/models/demo_avatars.dart';
+import '../../../util/images.dart';
 
 class InstagramBottomNavBar extends StatelessWidget {
   const InstagramBottomNavBar({
@@ -157,9 +156,9 @@ class _ProfileNavIcon extends StatelessWidget {
         ),
         child: ClipOval(
           child: Image.network(
-            demoAvatar3,
+            Images.demoAvatar3,
             fit: BoxFit.cover,
-            errorBuilder: (_, __, ___) => Container(
+            errorBuilder: (_, _, _) => Container(
               color: theme.cardColor,
               alignment: Alignment.center,
               child: Icon(Icons.person, color: theme.hintColor, size: 18),

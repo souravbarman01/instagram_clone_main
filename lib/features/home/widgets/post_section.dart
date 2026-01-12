@@ -17,13 +17,13 @@ class PostSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+          padding: const EdgeInsets.symmetric(horizontal: Dimensions.space12, vertical: Dimensions.space10),
           child: Row(
             children: [
               CircleAvatar(
-                radius: 16,
+                radius: Dimensions.space16,
                 backgroundImage: NetworkImage(post.userAvatarUrl),
-                onBackgroundImageError: (_, __) {},
+                onBackgroundImageError: (_, _) {},
               ),
               const SizedBox(width: Dimensions.space10),
               Expanded(
@@ -52,7 +52,7 @@ class PostSection extends StatelessWidget {
         ),
         _PostMediaCarousel(images: post.images),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+          padding: const EdgeInsets.symmetric(horizontal: Dimensions.space12, vertical: Dimensions.space10),
           child: Row(
             children: [
               Icon(Icons.favorite_border, color: theme.textTheme.bodyLarge?.color),
@@ -66,7 +66,7 @@ class PostSection extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 12),
+          padding: const EdgeInsets.symmetric(horizontal: Dimensions.space12),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -129,7 +129,7 @@ class _PostMediaCarouselState extends State<_PostMediaCarousel> {
                 return Image.network(
                   url,
                   fit: BoxFit.cover,
-                  errorBuilder: (_, __, ___) => Container(
+                  errorBuilder: (_, _, _) => Container(
                     color: theme.dividerColor.withValues(alpha: 0.25),
                     alignment: Alignment.center,
                     child: Text(

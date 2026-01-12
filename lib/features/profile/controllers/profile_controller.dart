@@ -1,6 +1,5 @@
 import 'package:get/get.dart';
-
-import '../../home/domain/models/demo_avatars.dart';
+import '../../../util/images.dart';
 import '../../home/domain/models/story_model.dart';
 import '../domain/models/profile_model.dart';
 
@@ -32,10 +31,10 @@ const ProfileModel _demoProfile = ProfileModel(
   bioHandle: '@pixsellz',
   bioLine2: 'Everything is designed.',
   highlights: [
-    StoryModel(name: 'New', imageUrl: demoAvatar1, isYourStory: true),
-    StoryModel(name: 'Friends', imageUrl: demoAvatar2),
-    StoryModel(name: 'Travel', imageUrl: demoAvatar4),
-    StoryModel(name: 'Food', imageUrl: demoAvatar5),
+    StoryModel(name: 'New', imageUrl: Images.demoAvatar1, isYourStory: true),
+    StoryModel(name: 'Friends', imageUrl: Images.demoAvatar2),
+    StoryModel(name: 'Travel', imageUrl: Images.demoAvatar4),
+    StoryModel(name: 'Food', imageUrl: Images.demoAvatar5),
   ],
   gridImages: [
     'https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=1200',

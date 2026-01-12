@@ -79,10 +79,7 @@ class LoginFormView extends StatelessWidget {
 
                 const SizedBox(height: Dimensions.space8),
 
-                PrimaryLoginButton(
-                  text: AppText.login,
-                  onPressed: onLogin,
-                ),
+                PrimaryLoginButton(text: AppText.login, onPressed: onLogin,),
 
                 const SizedBox(height: Dimensions.space18),
 
