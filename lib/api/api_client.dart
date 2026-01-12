@@ -1,3 +1,6 @@
+import 'dart:convert';
+
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 class ApiClient extends GetxService {
@@ -9,6 +12,11 @@ class ApiClient extends GetxService {
 
   ApiClient({required this.appBaseUrl}) {
    // updateHeader(null);
+  }
+
+  Future<dynamic> getData(String assetPath) async {
+    final jsonString = await rootBundle.loadString(assetPath);
+    return jsonDecode(jsonString);
   }
 
   // /// Update API headers

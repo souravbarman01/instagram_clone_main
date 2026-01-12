@@ -8,8 +8,19 @@ import '../widgets/home_feed_widget.dart';
 import '../../profile/screens/profile_screen.dart';
 import '../widgets/home_app_bar_widget.dart';
 
-class InstagramHomeScreen extends StatelessWidget {
+class InstagramHomeScreen extends StatefulWidget {
   const InstagramHomeScreen({super.key});
+
+  @override
+  State<InstagramHomeScreen> createState() => _InstagramHomeScreenState();
+}
+
+class _InstagramHomeScreenState extends State<InstagramHomeScreen> {
+  @override
+  void initState() {
+    super.initState();
+    Get.find<HomeController>().loadPosts();
+  }
 
   @override
   Widget build(BuildContext context) {
