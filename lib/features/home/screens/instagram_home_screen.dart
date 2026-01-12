@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'package:instagram_clone/util/text.dart';
+import 'package:instagram_clone_main/util/text.dart';
 import '../controllers/home_controller.dart';
 import '../widgets/bottom_navigation_bar.dart';
 import '../widgets/home_feed_widget.dart';

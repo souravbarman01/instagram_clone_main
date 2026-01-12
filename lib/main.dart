@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:instagram_clone/common/controllers/theme_controller.dart';
-import 'package:instagram_clone/helper/get_di.dart' as di;
-import 'package:instagram_clone/helper/route_helper.dart';
-import 'package:instagram_clone/theme/dark_theme.dart';
-import 'package:instagram_clone/theme/light_theme.dart';
-import 'package:instagram_clone/util/text.dart';
+import 'package:instagram_clone_main/common/controllers/theme_controller.dart';
+import 'package:instagram_clone_main/helper/get_di.dart' as di;
+import 'package:instagram_clone_main/helper/route_helper.dart';
+import 'package:instagram_clone_main/theme/dark_theme.dart';
+import 'package:instagram_clone_main/theme/light_theme.dart';
+import 'package:instagram_clone_main/util/text.dart';
 
 Future<void> main() async{
   WidgetsFlutterBinding.ensureInitialized();

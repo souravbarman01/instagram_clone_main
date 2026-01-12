@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:instagram_clone/util/dimensions.dart';
-import 'package:instagram_clone/util/text.dart';
+import 'package:instagram_clone_main/util/dimensions.dart';
+import 'package:instagram_clone_main/util/text.dart';
 
 import '../widgets/edit_profile_button.dart';
 import '../widgets/highlights_row.dart';

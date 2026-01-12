@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_clone/util/dimensions.dart';
+import 'package:instagram_clone_main/util/dimensions.dart';
 import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';
 

@@ -1,4 +1,4 @@
-import 'package:instagram_clone/api/api_client.dart';
+import 'package:instagram_clone_main/api/api_client.dart';
 
 import '../models/post_model.dart';
 import 'home_repository_interface.dart';

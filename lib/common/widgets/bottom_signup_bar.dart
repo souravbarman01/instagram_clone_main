@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_clone/util/dimensions.dart';
-import 'package:instagram_clone/util/text.dart';
+import 'package:instagram_clone_main/util/dimensions.dart';
+import 'package:instagram_clone_main/util/text.dart';
 
 class BottomSignupBar extends StatelessWidget {
   const BottomSignupBar({super.key});

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:instagram_clone/util/dimensions.dart';
-import 'package:instagram_clone/util/images.dart';
+import 'package:instagram_clone_main/util/dimensions.dart';
+import 'package:instagram_clone_main/util/images.dart';
 
 class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   const HomeAppBar({super.key});

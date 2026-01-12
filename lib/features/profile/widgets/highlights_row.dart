@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../home/widgets/story_bubble.dart';
 import '../../home/domain/models/story_model.dart';
-import 'package:instagram_clone/util/dimensions.dart';
+import 'package:instagram_clone_main/util/dimensions.dart';
 
 class HighlightsRow extends StatelessWidget {
   const HighlightsRow({super.key, required this.highlights, required this.onTap});

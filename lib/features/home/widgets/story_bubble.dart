@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_clone/features/home/widgets/story_ring.dart';
-import 'package:instagram_clone/util/dimensions.dart';
+import 'package:instagram_clone_main/features/home/widgets/story_ring.dart';
+import 'package:instagram_clone_main/util/dimensions.dart';
 
 import '../domain/models/story_model.dart';
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_clone/util/dimensions.dart';
+import 'package:instagram_clone_main/util/dimensions.dart';
 
 class PrimaryLoginButton extends StatelessWidget {
   const PrimaryLoginButton({super.key, required this.text, required this.onPressed});

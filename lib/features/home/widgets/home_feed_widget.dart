@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:instagram_clone/features/home/widgets/post_section.dart';
-import 'package:instagram_clone/features/home/widgets/stories_head_section.dart';
-import 'package:instagram_clone/util/dimensions.dart';
+import 'package:instagram_clone_main/features/home/widgets/post_section.dart';
+import 'package:instagram_clone_main/features/home/widgets/stories_head_section.dart';
+import 'package:instagram_clone_main/util/dimensions.dart';
 import '../controllers/home_controller.dart';
 
 class HomeFeedBody extends StatelessWidget {
@@ -34,7 +34,7 @@ class HomeFeedBody extends StatelessWidget {
               return const Divider(height: Dimensions.dividerHeight);
             }
             final post = posts[index - 2];
-            return DummyPostSection(post: post);
+            return PostSection(post: post);
           },
         );
       },

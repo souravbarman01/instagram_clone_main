@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:instagram_clone/util/images.dart';
-import 'package:instagram_clone/util/dimensions.dart';
+import 'package:instagram_clone_main/util/images.dart';
+import 'package:instagram_clone_main/util/dimensions.dart';
 
 import '../../../helper/route_helper.dart';
 

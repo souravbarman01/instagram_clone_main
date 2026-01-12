@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_clone/util/dimensions.dart';
-import 'package:instagram_clone/util/text.dart';
+import 'package:instagram_clone_main/util/dimensions.dart';
+import 'package:instagram_clone_main/util/text.dart';
 
 import '../domain/models/post_model.dart';
 
-class DummyPostSection extends StatelessWidget {
-  const DummyPostSection({super.key, required this.post});
+class PostSection extends StatelessWidget {
+  const PostSection({super.key, required this.post});
 
   final PostModel post;
 

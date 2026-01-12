@@ -1,10 +1,10 @@
-import 'package:instagram_clone/features/auth/controllers/instagram_auth_controller.dart';
-import 'package:instagram_clone/features/home/controllers/home_controller.dart';
-import 'package:instagram_clone/features/home/domain/repositories/home_repository.dart';
-import 'package:instagram_clone/features/home/domain/repositories/home_repository_interface.dart';
-import 'package:instagram_clone/features/home/domain/services/home_service.dart';
-import 'package:instagram_clone/features/home/domain/services/home_service_interface.dart';
-import 'package:instagram_clone/features/profile/controllers/profile_controller.dart';
+import 'package:instagram_clone_main/features/auth/controllers/instagram_auth_controller.dart';
+import 'package:instagram_clone_main/features/home/controllers/home_controller.dart';
+import 'package:instagram_clone_main/features/home/domain/repositories/home_repository.dart';
+import 'package:instagram_clone_main/features/home/domain/repositories/home_repository_interface.dart';
+import 'package:instagram_clone_main/features/home/domain/services/home_service.dart';
+import 'package:instagram_clone_main/features/home/domain/services/home_service_interface.dart';
+import 'package:instagram_clone_main/features/profile/controllers/profile_controller.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:get/get.dart';
 
