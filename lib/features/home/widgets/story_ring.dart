@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_clone/util/dimensions.dart';
 
 class StoryRing extends StatelessWidget {
   const StoryRing({
@@ -18,8 +19,8 @@ class StoryRing extends StatelessWidget {
       alignment: Alignment.center,
       children: [
         Container(
-          width: 64,
-          height: 64,
+          width: Dimensions.storyRingSize,
+          height: Dimensions.storyRingSize,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
             gradient: const LinearGradient(
@@ -47,8 +48,8 @@ class StoryRing extends StatelessWidget {
             bottom: 0,
             right: 0,
             child: Container(
-              width: 20,
-              height: 20,
+              width: Dimensions.storyBadgeSize,
+              height: Dimensions.storyBadgeSize,
               decoration: BoxDecoration(
                 color: Colors.blue,
                 shape: BoxShape.circle,

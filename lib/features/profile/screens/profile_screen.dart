@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:instagram_clone/util/dimensions.dart';
+import 'package:instagram_clone/util/text.dart';
 
 import '../widgets/edit_profile_button.dart';
 import '../widgets/highlights_row.dart';
@@ -36,21 +38,21 @@ class ProfileScreen extends StatelessWidget {
                         followers: profile.followers,
                         following: profile.following,
                       ),
-                      const SizedBox(height: 12),
+                      const SizedBox(height: Dimensions.space12),
                       ProfileBio(
                         name: profile.displayName,
                         line1: profile.bioLine1,
                         handle: profile.bioHandle,
                         line2: profile.bioLine2,
                       ),
-                      const SizedBox(height: 12),
+                      const SizedBox(height: Dimensions.space12),
                       const EditProfileButton(),
-                      const SizedBox(height: 14),
+                      const SizedBox(height: Dimensions.space14),
                       HighlightsRow(
                         highlights: profile.highlights,
                         onTap: () {},
                       ),
-                      const SizedBox(height: 10),
+                      const SizedBox(height: Dimensions.space10),
                     ],
                   ),
                 ),
@@ -58,12 +60,12 @@ class ProfileScreen extends StatelessWidget {
               SliverToBoxAdapter(
                 child: Column(
                   children: [
-                    Divider(height: 1, color: theme.dividerColor),
+                    Divider(height: Dimensions.dividerHeight, color: theme.dividerColor),
                     ProfileTabs(
                       tabIndex: profileController.tabIndex,
                       onChanged: profileController.setTabIndex,
                     ),
-                    Divider(height: 1, color: theme.dividerColor),
+                    Divider(height: Dimensions.dividerHeight, color: theme.dividerColor),
                   ],
                 ),
               ),
@@ -94,7 +96,7 @@ class ProfileScreen extends StatelessWidget {
                   hasScrollBody: false,
                   child: Center(
                     child: Text(
-                      'Tagged photos',
+                      AppText.taggedPhotos,
                       style: theme.textTheme.bodyMedium?.copyWith(
                         color: theme.hintColor,
                         fontWeight: FontWeight.w600,

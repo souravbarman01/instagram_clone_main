@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/features/home/widgets/story_ring.dart';
+import 'package:instagram_clone/util/dimensions.dart';
 
 import '../domain/models/story_model.dart';
 
@@ -19,7 +20,7 @@ class StoryBubble extends StatelessWidget {
       onTap: onTap,
       borderRadius: BorderRadius.circular(14),
       child: SizedBox(
-        width: 78,
+        width: Dimensions.storyBubbleWidth,
         child: Column(
           children: [
             StoryRing(
@@ -27,7 +28,7 @@ class StoryBubble extends StatelessWidget {
               showAddBadge: story.isYourStory,
               showLiveBadge: story.isLive,
             ),
-            const SizedBox(height: 8),
+            const SizedBox(height: Dimensions.space8),
             Text(
               story.name,
               maxLines: 1,

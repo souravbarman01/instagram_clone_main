@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:instagram_clone/util/dimensions.dart';
 
 class ProfileAppBar extends StatelessWidget implements PreferredSizeWidget {
   const ProfileAppBar({super.key, required this.username});
@@ -7,7 +8,7 @@ class ProfileAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String username;
 
   @override
-  Size get preferredSize => const Size.fromHeight(56);
+  Size get preferredSize => const Size.fromHeight(Dimensions.appBarHeight);
 
   @override
   Widget build(BuildContext context) {
@@ -22,25 +23,25 @@ class ProfileAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          FaIcon(FontAwesomeIcons.lock, size: 14, color: iconColor),
-          const SizedBox(width: 8),
+          FaIcon(FontAwesomeIcons.lock, size: Dimensions.space14, color: iconColor),
+          const SizedBox(width: Dimensions.space8),
           Text(
             username,
             style: theme.textTheme.titleLarge?.copyWith(
               fontWeight: FontWeight.w700,
             ),
           ),
-          const SizedBox(width: 4),
+          const SizedBox(width: Dimensions.space4),
           Icon(Icons.keyboard_arrow_down_rounded, color: iconColor),
         ],
       ),
       actions: [
         IconButton(
           onPressed: () {},
-          splashRadius: 22,
-          icon: FaIcon(FontAwesomeIcons.bars, size: 18, color: iconColor),
+          splashRadius: Dimensions.radiusExtraLarge + 2,
+          icon: FaIcon(FontAwesomeIcons.bars, size: Dimensions.space18, color: iconColor),
         ),
-        const SizedBox(width: 4),
+        const SizedBox(width: Dimensions.space4),
       ],
     );
   }

@@ -5,6 +5,7 @@ import 'package:instagram_clone/helper/get_di.dart' as di;
 import 'package:instagram_clone/helper/route_helper.dart';
 import 'package:instagram_clone/theme/dark_theme.dart';
 import 'package:instagram_clone/theme/light_theme.dart';
+import 'package:instagram_clone/util/text.dart';
 
 Future<void> main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -30,7 +31,7 @@ class _MyAppState extends State<MyApp> {
     return GetBuilder<ThemeController>(
       builder: (themeController) {
         return MaterialApp.router(
-          title: 'Flutter Demo',
+          title: AppText.appTitle,
           debugShowCheckedModeBanner: false,
           theme: instagramLightTheme,
           darkTheme: instagramDarkTheme,

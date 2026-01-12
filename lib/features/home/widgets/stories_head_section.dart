@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/features/home/widgets/story_bubble.dart';
+import 'package:instagram_clone/util/dimensions.dart';
 import '../domain/models/demo_avatars.dart';
 import '../domain/models/story_model.dart';
 
@@ -19,7 +20,7 @@ class StoriesHeaderSection extends StatelessWidget {
 
 
     return SizedBox(
-      height: 115,
+      height: Dimensions.storyHeaderHeight,
       child: ListView.separated(
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
         scrollDirection: Axis.horizontal,
@@ -30,7 +31,7 @@ class StoriesHeaderSection extends StatelessWidget {
             onTap: () {},
           );
         },
-        separatorBuilder: (_, __) => const SizedBox(width: 14),
+        separatorBuilder: (_, __) => const SizedBox(width: Dimensions.space14),
         itemCount: items.length,
       ),
     );

@@ -4,6 +4,7 @@ import '../../../common/widgets/avatar_widget.dart';
 import '../../../common/widgets/primary_login_button.dart';
 import '../../../util/dimensions.dart';
 import '../../../util/images.dart';
+import '../../../util/text.dart';
 
 class AccountView extends StatelessWidget {
   const AccountView({
@@ -25,7 +26,7 @@ class AccountView extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        const SizedBox(height: 20),
+        const SizedBox(height: Dimensions.space20),
 
         Image.asset(
           Images.instagramLogoWithName,
@@ -33,10 +34,10 @@ class AccountView extends StatelessWidget {
           fit: BoxFit.contain,
         ),
 
-        const SizedBox(height: 20),
+        const SizedBox(height: Dimensions.space20),
 
         Avatar(size: 78,),
-        const SizedBox(height: 12),
+        const SizedBox(height: Dimensions.space12),
 
         Text(
           username,
@@ -45,14 +46,14 @@ class AccountView extends StatelessWidget {
           ),
         ),
 
-        const SizedBox(height: 18),
+        const SizedBox(height: Dimensions.space18),
 
         PrimaryLoginButton(
-          text: 'Log in',
+          text: AppText.login,
           onPressed: onLogin,
         ),
 
-        const SizedBox(height: 18),
+        const SizedBox(height: Dimensions.space18),
 
         TextButton(
           onPressed: onSwitchAccounts,
@@ -61,12 +62,12 @@ class AccountView extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
           ),
           child: const Text(
-            'Switch accounts',
+            AppText.switchAccounts,
             style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
           ),
         ),
 
-        const SizedBox(height: 12),
+        const SizedBox(height: Dimensions.space12),
       ],
     );
   }

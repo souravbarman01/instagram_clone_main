@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_clone/util/dimensions.dart';
+import 'package:instagram_clone/util/text.dart';
 
 class EditProfileButton extends StatelessWidget {
   const EditProfileButton({super.key});
@@ -9,7 +11,7 @@ class EditProfileButton extends StatelessWidget {
 
     return SizedBox(
       width: double.infinity,
-      height: 36,
+      height: Dimensions.profileEditButtonHeight,
       child: OutlinedButton(
         onPressed: () {},
         style: OutlinedButton.styleFrom(
@@ -17,7 +19,7 @@ class EditProfileButton extends StatelessWidget {
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
         ),
         child: Text(
-          'Edit profile',
+          AppText.editProfile,
           style: theme.textTheme.bodyMedium?.copyWith(
             fontWeight: FontWeight.w700,
           ),
@@ -26,4 +28,3 @@ class EditProfileButton extends StatelessWidget {
     );
   }
 }
-

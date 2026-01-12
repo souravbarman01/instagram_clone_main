@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:instagram_clone/util/images.dart';
+import 'package:instagram_clone/util/dimensions.dart';
 
 import '../../../helper/route_helper.dart';
 
@@ -80,8 +81,8 @@ class _SplashScreenState extends State<SplashScreen>
               position: _slide,
               child: Image.asset(
                 Images.instaLogo,
-                height: 96,
-                width: 96,
+                height: Dimensions.splashLogoSize,
+                width: Dimensions.splashLogoSize,
               ),
             ),
           ),
@@ -90,4 +91,3 @@ class _SplashScreenState extends State<SplashScreen>
     );
   }
 }
-

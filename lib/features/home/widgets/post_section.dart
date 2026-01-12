@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_clone/util/dimensions.dart';
+import 'package:instagram_clone/util/text.dart';
 
 import '../domain/models/post_model.dart';
 
@@ -23,7 +25,7 @@ class DummyPostSection extends StatelessWidget {
                 backgroundImage: NetworkImage(post.userAvatarUrl),
                 onBackgroundImageError: (_, __) {},
               ),
-              const SizedBox(width: 10),
+              const SizedBox(width: Dimensions.space10),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -54,9 +56,9 @@ class DummyPostSection extends StatelessWidget {
           child: Row(
             children: [
               Icon(Icons.favorite_border, color: theme.textTheme.bodyLarge?.color),
-              const SizedBox(width: 16),
+              const SizedBox(width: Dimensions.space16),
               Icon(Icons.chat_bubble_outline, color: theme.textTheme.bodyLarge?.color),
-              const SizedBox(width: 16),
+              const SizedBox(width: Dimensions.space16),
               Icon(Icons.send_outlined, color: theme.textTheme.bodyLarge?.color),
               const Spacer(),
               Icon(Icons.bookmark_border, color: theme.textTheme.bodyLarge?.color),
@@ -69,12 +71,12 @@ class DummyPostSection extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Liked by ${post.likedByUser} and ${post.likesCount} others',
+                '${AppText.likedByPrefix}${post.likedByUser}${AppText.and}${post.likesCount}${AppText.others}',
                 style: theme.textTheme.bodyMedium?.copyWith(
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: Dimensions.space10),
               RichText(
                 text: TextSpan(
                   style: theme.textTheme.bodyMedium,
@@ -92,7 +94,7 @@ class DummyPostSection extends StatelessWidget {
             ],
           ),
         ),
-        const SizedBox(height: 12),
+        const SizedBox(height: Dimensions.space12),
       ],
     );
   }
@@ -131,7 +133,7 @@ class _PostMediaCarouselState extends State<_PostMediaCarousel> {
                     color: theme.dividerColor.withValues(alpha: 0.25),
                     alignment: Alignment.center,
                     child: Text(
-                      'Image unavailable',
+                      AppText.imageUnavailable,
                       style: theme.textTheme.bodyMedium?.copyWith(color: theme.hintColor),
                     ),
                   ),
@@ -151,8 +153,8 @@ class _PostMediaCarouselState extends State<_PostMediaCarousel> {
                   return AnimatedContainer(
                     duration: const Duration(milliseconds: 150),
                     margin: const EdgeInsets.symmetric(horizontal: 3),
-                    height: 6,
-                    width: isActive ? 10 : 6,
+                    height: Dimensions.space6,
+                    width: isActive ? Dimensions.space10 : Dimensions.space6,
                     decoration: BoxDecoration(
                       color: isActive ? theme.primaryColor : theme.dividerColor,
                       borderRadius: BorderRadius.circular(999),

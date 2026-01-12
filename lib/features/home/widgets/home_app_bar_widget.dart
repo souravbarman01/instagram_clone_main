@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:instagram_clone/util/dimensions.dart';
 import 'package:instagram_clone/util/images.dart';
 
 class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -7,7 +8,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
 
 
   @override
-  Size get preferredSize => const Size.fromHeight(56);
+  Size get preferredSize => const Size.fromHeight(Dimensions.appBarHeight);
 
 
   @override
@@ -28,7 +29,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       title: Image.asset(
         Images.instagramLogoWithName,
-        height: 34,
+        height: Dimensions.homeAppBarLogoHeight,
         fit: BoxFit.contain,
       ),
       actions: [
@@ -42,12 +43,12 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
           splashRadius: 22,
           icon: FaIcon(FontAwesomeIcons.paperPlane, color: iconColor, size: 20),
         ),
-        const SizedBox(width: 4),
+        const SizedBox(width: Dimensions.space4),
       ],
       bottom: PreferredSize(
         preferredSize: const Size.fromHeight(1),
         child: Divider(
-          height: 1,
+          height: Dimensions.dividerHeight,
           thickness: Theme.of(context).dividerTheme.thickness ?? 0.5,
           color: Theme.of(context).dividerColor,
         ),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_clone/util/dimensions.dart';
+import 'package:instagram_clone/util/text.dart';
 
 class OrDivider extends StatelessWidget {
   const OrDivider({super.key});
@@ -10,11 +12,11 @@ class OrDivider extends StatelessWidget {
 
     return Row(
       children: [
-        Expanded(child: Container(height: 1, color: line)),
+        Expanded(child: Container(height: Dimensions.dividerHeight, color: line)),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 14),
+          padding: const EdgeInsets.symmetric(horizontal: Dimensions.space14),
           child: Text(
-            'OR',
+            AppText.or,
             style: theme.textTheme.bodySmall?.copyWith(
               color: theme.hintColor,
               fontWeight: FontWeight.w700,
@@ -22,7 +24,7 @@ class OrDivider extends StatelessWidget {
             ),
           ),
         ),
-        Expanded(child: Container(height: 1, color: line)),
+        Expanded(child: Container(height: Dimensions.dividerHeight, color: line)),
       ],
     );
   }

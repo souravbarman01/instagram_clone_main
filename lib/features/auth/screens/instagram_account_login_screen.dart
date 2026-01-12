@@ -33,10 +33,10 @@ class _InstagramAuthorizationScreenState extends State<InstagramAuthorizationScr
           body: SafeArea(
             child: Column(
               children: [
-                const SizedBox(height: 8),
+                const SizedBox(height: Dimensions.space8),
 
                 SizedBox(
-                  height: 44,
+                  height: Dimensions.authTopBarHeight,
                   child: Align(
                     alignment: Alignment.centerLeft,
                     child: AnimatedSwitcher(
@@ -45,10 +45,10 @@ class _InstagramAuthorizationScreenState extends State<InstagramAuthorizationScr
                           ? IconButton(
                               key: const ValueKey('back'),
                               onPressed: authController.toAccount,
-                              splashRadius: 22,
+                              splashRadius: Dimensions.radiusExtraLarge + 2,
                               icon: const Icon(
                                 Icons.arrow_back_ios_new_rounded,
-                                size: 20,
+                                size: Dimensions.space20,
                               ),
                             )
                           : const SizedBox(key: ValueKey('spacer')),
@@ -62,7 +62,7 @@ class _InstagramAuthorizationScreenState extends State<InstagramAuthorizationScr
                     child: ConstrainedBox(
                       constraints: const BoxConstraints(maxWidth: 420),
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 24),
+                        padding: const EdgeInsets.symmetric(horizontal: Dimensions.paddingSizeExtraLarge),
                         child: AnimatedSwitcher(
                           duration: const Duration(milliseconds: 220),
                           switchInCurve: Curves.easeOut,
@@ -98,4 +98,3 @@ class _InstagramAuthorizationScreenState extends State<InstagramAuthorizationScr
     );
   }
 }
-

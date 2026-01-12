@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_clone/util/dimensions.dart';
 
 class PrimaryLoginButton extends StatelessWidget {
   const PrimaryLoginButton({super.key, required this.text, required this.onPressed});
@@ -13,7 +14,7 @@ class PrimaryLoginButton extends StatelessWidget {
 
     return SizedBox(
       width: double.infinity,
-      height: 44,
+      height: Dimensions.primaryButtonHeight,
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(

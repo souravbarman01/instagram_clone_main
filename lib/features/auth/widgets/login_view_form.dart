@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../../common/widgets/primary_login_button.dart';
 import '../../../util/dimensions.dart';
 import '../../../util/images.dart';
+import '../../../util/text.dart';
 import 'instagram_textfield_widget.dart';
 import 'or_divider_widget.dart';
 
@@ -36,7 +37,7 @@ class LoginFormView extends StatelessWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                const SizedBox(height: 18),
+                const SizedBox(height: Dimensions.space18),
 
                 Image.asset(
                   Images.instagramLogoWithName,
@@ -44,22 +45,22 @@ class LoginFormView extends StatelessWidget {
                   fit: BoxFit.contain,
                 ),
 
-                const SizedBox(height: 28),
+                const SizedBox(height: Dimensions.space28),
 
                 IGTextField(
                   controller: usernameCtrl,
-                  hintText: 'Phone number, username, or email',
+                  hintText: AppText.phoneUsernameEmailHint,
                   textInputAction: TextInputAction.next,
                 ),
-                const SizedBox(height: 12),
+                const SizedBox(height: Dimensions.space12),
                 IGTextField(
                   controller: passwordCtrl,
-                  hintText: 'Password',
+                  hintText: AppText.passwordHint,
                   obscureText: true,
                   textInputAction: TextInputAction.done,
                 ),
 
-                const SizedBox(height: 10),
+                const SizedBox(height: Dimensions.space10),
 
                 Align(
                   alignment: Alignment.centerRight,
@@ -67,44 +68,44 @@ class LoginFormView extends StatelessWidget {
                     onPressed: onForgotPassword,
                     style: TextButton.styleFrom(
                       foregroundColor: primary,
-                      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 6),
+                      padding: EdgeInsets.symmetric(horizontal: Dimensions.space6, vertical: Dimensions.space6),
                     ),
                     child: const Text(
-                      'Forgot password?',
-                      style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600),
+                      AppText.forgotPassword,
+                      style: TextStyle(fontSize: Dimensions.space12, fontWeight: FontWeight.w600),
                     ),
                   ),
                 ),
 
-                const SizedBox(height: 8),
+                const SizedBox(height: Dimensions.space8),
 
                 PrimaryLoginButton(
-                  text: 'Log in',
+                  text: AppText.login,
                   onPressed: onLogin,
                 ),
 
-                const SizedBox(height: 18),
+                const SizedBox(height: Dimensions.space18),
 
                 TextButton.icon(
                   onPressed: onLoginWithFacebook,
                   icon: Icon(Icons.facebook, color: primary, size: Dimensions.paddingSizeDefault * 1.5),
                   label: Text(
-                    'Log in with Facebook',
+                    AppText.loginWithFacebook,
                     style: TextStyle(
                       color: primary,
                       fontWeight: FontWeight.w600,
-                      fontSize: 14,
+                      fontSize: Dimensions.space14,
                     ),
                   ),
                 ),
 
-                const SizedBox(height: 16),
+                const SizedBox(height: Dimensions.space16),
 
                 const OrDivider(),
 
-                const SizedBox(height: 18),
+                const SizedBox(height: Dimensions.space18),
 
-                const SizedBox(height: 28),
+                const SizedBox(height: Dimensions.space28),
               ],
             ),
           ),

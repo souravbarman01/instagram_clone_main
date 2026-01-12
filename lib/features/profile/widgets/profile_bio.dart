@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_clone/util/dimensions.dart';
 
 class ProfileBio extends StatelessWidget {
   const ProfileBio({
@@ -27,7 +28,7 @@ class ProfileBio extends StatelessWidget {
             fontWeight: FontWeight.w700,
           ),
         ),
-        const SizedBox(height: 2),
+        const SizedBox(height: Dimensions.space2),
         RichText(
           text: TextSpan(
             style: theme.textTheme.bodyLarge?.copyWith(height: 1.25),
@@ -43,7 +44,7 @@ class ProfileBio extends StatelessWidget {
             ],
           ),
         ),
-        const SizedBox(height: 2),
+        const SizedBox(height: Dimensions.space2),
         Text(
           line2,
           style: theme.textTheme.bodyLarge?.copyWith(height: 1.25),

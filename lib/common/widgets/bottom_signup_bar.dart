@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_clone/util/dimensions.dart';
+import 'package:instagram_clone/util/text.dart';
 
 class BottomSignupBar extends StatelessWidget {
   const BottomSignupBar({super.key});
@@ -11,7 +13,7 @@ class BottomSignupBar extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         Divider(
-          height: 1,
+          height: Dimensions.dividerHeight,
           thickness: theme.dividerTheme.thickness ?? 0.5,
           color: theme.dividerColor,
         ),
@@ -21,18 +23,16 @@ class BottomSignupBar extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "Don't have an account? ",
+                AppText.noAccountPrefix,
                 style: theme.textTheme.bodyMedium?.copyWith(
                   color: theme.hintColor,
                   fontWeight: FontWeight.w500,
                 ),
               ),
-              // You said you don't need the sign up screen yet,
-              // so this is just a tappable text placeholder.
               GestureDetector(
                 onTap: () {},
                 child: Text(
-                  'Sign up.',
+                  AppText.signUp,
                   style: theme.textTheme.bodyMedium?.copyWith(
                     fontWeight: FontWeight.w700,
                     color: theme.primaryColor,
@@ -42,7 +42,7 @@ class BottomSignupBar extends StatelessWidget {
             ],
           ),
         ),
-        const SizedBox(height: 6),
+        const SizedBox(height: Dimensions.space6),
       ],
     );
   }

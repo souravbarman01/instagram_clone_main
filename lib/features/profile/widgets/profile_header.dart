@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_clone/util/dimensions.dart';
+import 'package:instagram_clone/util/text.dart';
 
 class ProfileHeader extends StatelessWidget {
   const ProfileHeader({
@@ -21,8 +23,8 @@ class ProfileHeader extends StatelessWidget {
     return Row(
       children: [
         Container(
-          width: 92,
-          height: 92,
+          width: Dimensions.profileAvatarSize,
+          height: Dimensions.profileAvatarSize,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
             border: Border.all(color: theme.dividerColor, width: 1.2),
@@ -42,14 +44,14 @@ class ProfileHeader extends StatelessWidget {
             ),
           ),
         ),
-        const SizedBox(width: 18),
+        const SizedBox(width: Dimensions.space18),
         Expanded(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              _StatBlock(value: posts, label: 'Posts'),
-              _StatBlock(value: followers, label: 'Followers'),
-              _StatBlock(value: following, label: 'Following'),
+              _StatBlock(value: posts, label: AppText.posts),
+              _StatBlock(value: followers, label: AppText.followers),
+              _StatBlock(value: following, label: AppText.following),
             ],
           ),
         ),
@@ -77,7 +79,7 @@ class _StatBlock extends StatelessWidget {
             fontWeight: FontWeight.w700,
           ),
         ),
-        const SizedBox(height: 2),
+        const SizedBox(height: Dimensions.space2),
         Text(
           label,
           style: theme.textTheme.bodyMedium?.copyWith(
@@ -88,4 +90,3 @@ class _StatBlock extends StatelessWidget {
     );
   }
 }
-

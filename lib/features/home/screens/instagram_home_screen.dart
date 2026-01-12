@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'package:instagram_clone/util/text.dart';
 import '../controllers/home_controller.dart';
 import '../widgets/bottom_navigation_bar.dart';
 import '../widgets/home_feed_widget.dart';
@@ -19,9 +20,9 @@ class InstagramHomeScreen extends StatelessWidget {
             index: homeController.currentIndex,
             children: const [
               Scaffold(appBar: HomeAppBar(), body: HomeFeedBody()),
-              Scaffold(body: Center(child: Text('Search'))),
-              Scaffold(body: Center(child: Text('Reels'))),
-              Scaffold(body: Center(child: Text('Shop'))),
+              Scaffold(body: Center(child: Text(AppText.search))),
+              Scaffold(body: Center(child: Text(AppText.reels))),
+              Scaffold(body: Center(child: Text(AppText.shop))),
               ProfileScreen(),
             ],
           ),

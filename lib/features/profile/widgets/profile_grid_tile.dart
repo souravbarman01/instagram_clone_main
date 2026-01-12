@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../../../util/dimensions.dart';
+
 class ProfileGridTile extends StatelessWidget {
   const ProfileGridTile({
     super.key,
@@ -27,12 +29,12 @@ class ProfileGridTile extends StatelessWidget {
           ),
         ),
         if (showVideoBadge)
-          const Positioned(
-            top: 6,
-            right: 6,
+          Positioned(
+            top: Dimensions.space6,
+            right: Dimensions.space6,
             child: FaIcon(
               FontAwesomeIcons.video,
-              size: 14,
+              size: Dimensions.space14,
               color: Colors.white,
             ),
           ),

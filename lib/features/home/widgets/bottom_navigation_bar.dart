@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:instagram_clone/util/dimensions.dart';
 
 import '../domain/models/demo_avatars.dart';
 
@@ -27,7 +28,7 @@ class InstagramBottomNavBar extends StatelessWidget {
     return SafeArea(
       top: false,
       child: Container(
-        height: 56,
+        height: Dimensions.bottomNavBarHeight,
         decoration: BoxDecoration(
           color: theme.scaffoldBackgroundColor,
           border: Border(
@@ -145,8 +146,8 @@ class _ProfileNavIcon extends StatelessWidget {
     return GestureDetector(
       onTap: () => onTap(index),
       child: Container(
-        width: 30,
-        height: 30,
+        width: Dimensions.profileNavIconSize,
+        height: Dimensions.profileNavIconSize,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           border: Border.all(

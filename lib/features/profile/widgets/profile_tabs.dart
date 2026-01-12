@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:instagram_clone/util/dimensions.dart';
 
 class ProfileTabs extends StatelessWidget {
   const ProfileTabs({super.key, required this.tabIndex, required this.onChanged});
@@ -14,7 +15,7 @@ class ProfileTabs extends StatelessWidget {
     final inactive = theme.hintColor;
 
     return SizedBox(
-      height: 48,
+      height: Dimensions.profileTabHeight,
       child: Row(
         children: [
           Expanded(
@@ -63,7 +64,7 @@ class _TabButton extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
-        height: 48,
+        height: Dimensions.profileTabHeight,
         alignment: Alignment.center,
         decoration: BoxDecoration(
           border: Border(
@@ -75,11 +76,10 @@ class _TabButton extends StatelessWidget {
         ),
         child: FaIcon(
           icon,
-          size: 18,
+          size: Dimensions.space18,
           color: isActive ? activeColor : inactiveColor,
         ),
       ),
     );
   }
 }
-
